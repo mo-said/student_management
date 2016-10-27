@@ -22,8 +22,7 @@ $rel=mysql_query($sql ,$conn);
 if (!$rel) {
 	echo "not done";
 }else{
-	// TODO: Redirect to /quiz/students.php
-	header( 'Location: /quiz/students.php' );
+	header( 'Location: /student_management/students.php' );
 }
 
 mysql_close($conn);

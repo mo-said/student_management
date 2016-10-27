@@ -21,8 +21,6 @@ if (!$rel) {
 	$arr = array('status'=>'bad');
 	echo json_encode($arr);
 }else{
-	// TODO: Redirect to /quiz/students.php
-//header( 'Location: /quiz/students.php' );
 	$arr = array('status'=>'good');
 	echo json_encode($arr);	
 }

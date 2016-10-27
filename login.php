@@ -25,10 +25,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mysql_num_rows($rel_admin) > 0) {
          $_SESSION['admin']= 1;
          
-          header("location: home_admin.php");
+          header("location:home_admin.php");
          }else{
 
-         header("location: index.php");
+         header("location:index.php");
         }
     }else{
   
@@ -49,15 +49,32 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style type="text/css">
-  h2 {text-align: center}</style>
-</head>
-<body>
+  <link rel="stylesheet" type="text/css" href="/student_management/background.css">
 
+  <style type="text/css">
+  h2 {
+    text-align: center;
+    }
+  body {
+    height: 100%;
+    color: white;
+  }
+  .img {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+  }
+
+  
+  </style>
+</head>
+<body >
     <div class="container">
 
       <form class="form-signin" method="post" action="" >
-        <h2 class="form-signin-heading alert-success"><b>Please log in</b></h2>
+      <div class="divlog" >
+          <img class="img col-md-offset-5"src="http://icons.iconarchive.com/icons/webalys/kameleon.pics/512/Student-3-icon.png">
+          </div>
         <label for="username" >user name</label>
         <input type="text" name="username" class="form-control" placeholder="Email address" required/>
         <label for="passw" >Password</label>
@@ -67,13 +84,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="checkbox" value=" "> Remember me</label>
         </div>
         
-        <button class="btn" type="submit">Sign in</button>
-        <a class="btn" href="/quiz/new_student.php">sign up</a>
+        <button class="btn btn-success" type="submit">Sign in</button>
+        <a class="btn btn-default" href="/student_management/new_student.php">sign up</a>
       </form>
                    
     </div> <!-- /container -->
             <div > <?php  echo $done;  ?></div>
-
 </body>
 </html>
 <?php

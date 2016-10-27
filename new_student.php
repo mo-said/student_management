@@ -13,10 +13,17 @@ include("config.php");
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/student_management/background.css">
+
   <style type="text/css">
+    body {
+    height: 100%;
+    color: white;
+  }
   h2 {
   	text-align: center;
-  }
+    background-color: grey;
+     }
   </style>
 </head>
 <body>
@@ -26,31 +33,30 @@ include("config.php");
   if(isset($_SESSION["user"])) {
 ?>
 <div class="pull-right">
-<form method="post" action="/quiz/logout.php">
-          <button class="btn btn-danger"type="submit">log out</button>
-
-    </form>
-    </div>
+  <form method="post" action="/student_management/logout.php">
+    <button class="btn btn-danger"type="submit">log out</button>
+  </form>
+</div>
 <?php } ?>
 
-    <div class="pull-left">
- <form method="post" action="/quiz/index.php">
-          <button class="btn"type="submit">Home</button>
+<div class="pull-left">
+ <form method="post" action="/student_management/index.php">
+    <button class="btn"type="submit">Home</button>
+ </form>
+</div>
 
-    </form>
-    </div>
 <div class="container">
-	    <div class="col-sm-offset-2 col-sm-10">
-  <h2><u><b>Enter Student Information</b></u></h2>
-  		</div>
-  <form class="form-horizontal" method="post" action="/quiz/create_student.php">
+	<div class="col-sm-offset-2 col-sm-10">
+    <h2><u><b>Enter Student Information</b></u></h2>
+  </div>
+  <form class="form-horizontal" method="post" action="/student_management/create_student.php">
 	   
-      <div class="form-group">
-      			<label class="col-sm-2 control-label" for="name">Name:</label>
-      			<div class="col-sm-10">
-      				<input type="text" name="name" class="form-control"  placeholder="Enter your name">
-      			</div>
-    	</div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label" for="name">Name:</label>
+      <div class="col-sm-10">
+        <input type="text" name="name" class="form-control"  placeholder="Enter your name">
+      </div>
+    </div>
     	<div class="form-group">
      		<label class="col-sm-2 control-label" for="email">Email:</label>
      		<div class="col-sm-10">

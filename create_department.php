@@ -16,9 +16,9 @@ $sql = " INSERT INTO departments ( name , description) VALUES ('$name', '$descri
 $rel=mysql_query($sql , $conn);
 if (!$rel) {
 	echo " Not Done !! ..";
-} else {
-	header( 'Location: /quiz/departments.php' );
-}
+	} else {
+	header( 'Location: /student_management/departments.php' );
+		}
 
 mysql_close($conn);
 

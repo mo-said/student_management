@@ -1,9 +1,9 @@
-
 <?php
   
 include("config.php");
-
-
+if (is) {
+	# code...
+}
 $admin =isset($_POST["admin"]) ? 1  : 0;
 $id= $_POST["id"];
 
@@ -24,8 +24,8 @@ if (!$rel) {
 	echo "not done";
 }else{
 
-	// TODO: Redirect to /quiz/students.php
-	header( 'Location: /quiz/home_admin.php' );
+	
+	header( 'Location: /student_management/home_admin.php' );
 
 }
 mysql_close($conn);

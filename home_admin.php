@@ -4,7 +4,7 @@
 include("config.php");
 include("check_session.php");
 if (!$_SESSION["admin"]) {
-	header("location: /quiz/login.php");
+	header("location: /student_management/login.php");
 	}	
 ?>
 
@@ -17,18 +17,29 @@ if (!$_SESSION["admin"]) {
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style type="text/css"></style>
+  <link rel="stylesheet" type="text/css" href="/student_management/background.css">
+
+  <style type="text/css">
+ body {
+    height: 100%;
+    color: white;
+  }
+  .table{
+    background-color: grey;
+  }
+    </style>
+ 
 </head>
 <body>
 <div class="pull-right">
- <form method="post" action="/quiz/logout.php">
+ <form method="post" action="/student_management/logout.php">
           <button class="btn btn-danger"type="submit">log out</button>
 
     </form>
     </div>
 
     <div class="pull-left">
- <form method="post" action="/quiz/index.php">
+ <form method="post" action="/student_management/index.php">
           <button class="btn"type="submit">Home</button>
 
     </form>
@@ -63,7 +74,7 @@ if (!$_SESSION["admin"]) {
         <td><?php echo $res['num'] ?></td>
         <td><?php echo $res['department_name'] ?></td>
         <td>
-          <form action="/quiz/create_admin.php" method="post">
+          <form action="/student_management/create_admin.php" method="post">
             <input type="hidden" name="id" value=<?php echo $res['id']; ?>><br>
             <?php
                $checked = "";
@@ -76,7 +87,7 @@ if (!$_SESSION["admin"]) {
             <input class="check_admin" type="checkbox" name="admin"   <?php echo $checked; ?> ><br>
           </form> 
         </td>
-        <td><a  class="btn btn-warning" href=<?php echo "/quiz/edit_student.php?id=".$res['id']?> >Edit</a></td>
+        <td><a  class="btn btn-warning" href=<?php echo "/student_management/edit_student.php?id=".$res['id']?> >Edit</a></td>
         <td>
           <form class="delete form-horizontal" method="post" >    
             <!-- da input hidden for ID -->
@@ -97,7 +108,7 @@ if (!$_SESSION["admin"]) {
 </div>
 <div class="container">
   <div class="row">
-    <a href="/quiz/new_student.php" class="st btn btn-success col-md-offset-5 ">Create New Student</a>
+    <a href="/student_management/new_student.php" class="st btn btn-success col-md-offset-5 ">Create New Student</a>
   </div>
 </div>
 
@@ -116,7 +127,7 @@ $(document).ready(function(){
     if (delt) {
       $.ajax ({
                 type:"post",
-                url:"/quiz/delete_student.php",
+                url:"/student_management/delete_student.php",
                 data: {id: $(this).children("input").val() },
                 success:  function(response){
                     response = JSON.parse(response);

@@ -14,9 +14,16 @@ include("config.php");
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/student_management/background.css">
+
   <style type="text/css">
+    body {
+    height: 100%;
+    color: white;
+  }
   h2 {
   	text-align: center;
+    background-color: grey;
   }
   </style>
 </head>
@@ -24,9 +31,9 @@ include("config.php");
 
 <div class="container">
 	    <div class="col-sm-offset-2 col-sm-10">
-  <h2><u>Edit your Information</u></h2>
+  <h2><u>Edit your Information<u></h2>
   		</div>
-  <form class="form-horizontal" method="post" action="/quiz/update_student.php">
+  <form class="form-horizontal" method="post" action="/student_management/update_student.php">
         <?php
         $id=$_GET['id'];
       $sql="SELECT * FROM student WHERE id='$id' ";
@@ -60,7 +67,7 @@ include("config.php");
  			</div>   	
     	</div>
     	    <div class="col-sm-offset-6 col-sm-10">
-    			<button type="submit" class="btn " >Update</button>
+    			<button type="submit" class="btn btn-success col-md-2" >Update</button>
   			</div>
               <?php
         } 
@@ -70,12 +77,12 @@ include("config.php");
   </div>
 
 <div class="container">
-  <form class="form-horizontal" method="post" action="/quiz/delete_student.php">    
+  <form class="form-horizontal" method="post" action="/student_management/delete_student.php">    
       
       <!-- da input hidden for ID -->
                 <input type="hidden" name="id" value=<?php echo $_GET['id']; ?> >
           <div class="col-sm-offset-6 col-sm-10">
-          <button type="submit" class="btn btn-danger" >Delete</button>
+          <button type="submit" class="btn btn-danger col-md-2" >Delete</button>
         </div>
   </form>
 </div>

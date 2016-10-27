@@ -13,18 +13,28 @@ include("config.php");
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <style type="text/css"></style>
+  <link rel="stylesheet" type="text/css" href="/student_management/background.css">
+
+  <style type="text/css">
+  body {
+    height: 100%;
+    color: white;
+  }
+  .table{
+    background-color: grey;
+  }
+  </style>
 </head>
 <body>
 <div class="pull-right">
- <form method="post" action="/quiz/logout.php">
+ <form method="post" action="/student_management/logout.php">
           <button class="btn btn-danger"type="submit">log out</button>
 
     </form>
     </div>
 
     <div class="pull-left">
- <form method="post" action="/quiz/index.php">
+ <form method="post" action="/student_management/index.php">
           <button class="btn"type="submit">Home</button>
 
     </form>
@@ -61,7 +71,7 @@ include("config.php");
 <div class="container">
   <div class="row">
 
-    <a href="/quiz/new_department.php" class="dep btn btn-warning col-md-offset-5">Create New Department</a>
+    <a href="/student_management/new_department.php" class="dep btn btn-warning col-md-offset-5">Create New Department</a>
   </div>
 </div>
 </body>
