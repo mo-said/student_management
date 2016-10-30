@@ -86,7 +86,8 @@ include("check_session.php");
     </form>
   </div>
   <div class="jumbotron text-center">
-  <div> Welcome <?php echo $_SESSION['user']; ?></div>
+<i class="glyphicon glyphicon-user"></i>
+  <div><b> Welcome <?php echo $_SESSION['user']; ?></b></div>
     <h1><b>welcome</b></h1>
     <p>  To create and edit your Information </p>
     </div>

@@ -33,7 +33,7 @@ include("check_session.php");
 
     <div class="pull-left">
  <form method="post" action="/student_management/index.php">
-          <button class="btn"type="submit">Home</button>
+          <button class="btn btn-primary"type="submit">Home</button>
 
     </form>
     </div>
